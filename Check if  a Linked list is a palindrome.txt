@@ -1,0 +1,29 @@
+struct Node {
+  int data;
+  struct Node *next;
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};
+*/
+
+class Solution{
+  public:
+    //Function to check whether the list is palindrome.
+     bool isPalindrome(Node *head)
+    {
+        //Your code here
+        string v = "";
+        while(head!=NULL){
+            v += (head->data + '0');
+            head=head->next;
+        }
+        for (int i=0; i<v.length()/2; i++){
+            if (v[i]!=v[v.length()-1-i]){
+                return false;
+            }
+        }
+        return true;
+    }
+};
